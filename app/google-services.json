@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "372610638197",
+    "firebase_url": "https://simplecrud-35f8a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "simplecrud-35f8a",
+    "storage_bucket": "simplecrud-35f8a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372610638197:android:ae9e9e596834bd9247333c",
+        "android_client_info": {
+          "package_name": "com.example.simplecrud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj7DAsxa_F45FIE_hOuRev76U2o6H9dJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

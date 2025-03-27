@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:elevation="10dp"
+    android:backgroundTint="@color/white"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/image_placeholder"
+            android:layout_centerVertical="true"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/primary_color" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_marginLeft="10dp"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/primary_color" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/textTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp"
+            android:text="Description"
+            android:textSize="16dp"
+            android:textColor="@color/dark_color" />
+
+        <ImageView
+            android:id="@+id/editIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/deleteIcon"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/outline_contract_edit_24"
+            android:background="@drawable/rounded_background"
+            android:scaleType="fitCenter"
+            android:padding="7.5dp" />
+
+        <ImageView
+            android:id="@+id/deleteIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/rounded_contract_delete_24"
+            android:background="@drawable/rounded_background"
+            android:scaleType="fitCenter"
+            android:padding="7.5dp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
