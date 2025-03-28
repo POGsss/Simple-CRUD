@@ -52,8 +52,8 @@
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/deleteIcon"
             android:layout_marginRight="10dp"
-            android:src="@drawable/outline_contract_edit_24"
-            android:background="@drawable/rounded_background"
+            android:src="@drawable/icon_edit"
+            android:background="@drawable/background_primary"
             android:scaleType="fitCenter"
             android:padding="7.5dp" />
 
@@ -63,8 +63,8 @@
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:src="@drawable/rounded_contract_delete_24"
-            android:background="@drawable/rounded_background"
+            android:src="@drawable/icon_delete"
+            android:background="@drawable/background_primary"
             android:scaleType="fitCenter"
             android:padding="7.5dp" />
 

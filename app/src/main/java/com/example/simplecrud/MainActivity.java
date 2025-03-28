@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton addFab;
     RecyclerView outputRv;
     MainAdapter mainAdapter;
+    SearchView searchBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialization
         addFab = findViewById(R.id.fabAdd);
         outputRv = findViewById(R.id.outputRv);
+        searchBar = findViewById(R.id.searchBar);
 
         // Floating Action Bar
         addFab.setOnClickListener(new View.OnClickListener() {
@@ -47,12 +50,39 @@ public class MainActivity extends AppCompatActivity {
 
         mainAdapter = new MainAdapter(options);
         outputRv.setAdapter(mainAdapter);
+
+        // Search Bar
+        searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchText(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                searchText(query);
+                return false;
+            }
+        });
     }
 
     // Start Main Adapter
     @Override
     protected void onStart() {
         super.onStart();
+        mainAdapter.startListening();
+    }
+
+    // Search Bar Function
+    public void searchText(String query) {
+        FirebaseRecyclerOptions<MainModel> options =
+                new FirebaseRecyclerOptions.Builder<MainModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("data").orderByChild("title").startAt(query).endAt(query+"~"), MainModel.class)
+                        .build();
+
+        mainAdapter = new MainAdapter(options);
+        outputRv.setAdapter(mainAdapter);
         mainAdapter.startListening();
     }
 }
