@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img1"
@@ -22,34 +22,38 @@
             app:civ_border_width="2dp"
             app:civ_border_color="@color/primary_color" />
 
-        <TextView
-            android:id="@+id/textTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/img1"
             android:layout_marginLeft="10dp"
-            android:text="Title"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="@color/primary_color" />
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
 
-        <TextView
-            android:id="@+id/textDescription"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/textTitle"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="100dp"
-            android:text="Description"
-            android:textSize="16dp"
-            android:textColor="@color/dark_color" />
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Title"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/primary_color" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="16dp"
+                android:textColor="@color/dark_color" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/editIcon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/deleteIcon"
             android:layout_marginRight="10dp"
             android:src="@drawable/icon_edit"
@@ -61,7 +65,6 @@
             android:id="@+id/deleteIcon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_delete"
             android:background="@drawable/background_primary"
