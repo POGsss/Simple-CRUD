@@ -11,23 +11,27 @@
         android:id="@+id/outputRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="90dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
         android:clipToPadding="false"
-        android:layout_below="@+id/searchBar"
         android:background="@color/light_color"/>
-    
+
     <SearchView
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/background_white"
-        android:searchIcon="@drawable/icon_search"
+        android:textColor="@color/black"
         android:closeIcon="@drawable/icon_close"
+        android:elevation="10dp"
         android:searchHintIcon="@color/white"
-        android:elevation="10dp" />
+        android:searchIcon="@drawable/icon_search" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"

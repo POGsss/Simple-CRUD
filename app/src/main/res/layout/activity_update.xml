@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/light_color"
     android:orientation="vertical"
-    tools:context=".CreateActivity">
+    tools:context=".UpdateActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -29,41 +29,44 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Create Data"
+                android:text="Update Data"
                 android:textAlignment="center"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary_color"/>
 
-            <ImageView
-                android:id="@+id/uploadImage"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/image_add"
-                android:scaleType="fitCenter"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:padding="10dp"
-                android:background="@drawable/background_outline"/>
+                android:text="Image URL: "
+                android:textSize="14sp"/>
 
             <EditText
-                android:id="@+id/uploadUrl"
+                android:id="@+id/updateUrl"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/background_light"
                 android:padding="15dp"
                 android:textSize="16sp"
                 android:textColor="@color/dark_color"
                 android:gravity="top|start"
                 android:hint="Paste image url"
-                android:textColorHint="@color/primary_color_variant"
-                android:visibility="gone"/>
+                android:textColorHint="@color/primary_color_variant"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Title: "
+                android:textSize="14sp"/>
 
             <EditText
-                android:id="@+id/uploadTitle"
+                android:id="@+id/updateTitle"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/background_light"
                 android:padding="15dp"
                 android:textSize="16sp"
@@ -72,11 +75,18 @@
                 android:hint="Enter title"
                 android:textColorHint="@color/primary_color_variant" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Description: "
+                android:textSize="14sp"/>
+
             <EditText
-                android:id="@+id/uploadDesc"
+                android:id="@+id/updateDesc"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/background_light"
                 android:padding="15dp"
                 android:textSize="16sp"
@@ -84,28 +94,39 @@
                 android:gravity="top|start"
                 android:hint="Enter Description"
                 android:textColorHint="@color/primary_color_variant"/>
-            
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:text="Save"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:background="@drawable/background_primary"
-                app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/backButton"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:text="Back"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:background="@drawable/background_primary"
-                app:cornerRadius="15dp" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:text="Cancel"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/background_primary"
+                    app:cornerRadius="15dp" />
+
+                <Button
+                    android:id="@+id/updateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:text="Update"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/background_primary"
+                    app:cornerRadius="15dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
