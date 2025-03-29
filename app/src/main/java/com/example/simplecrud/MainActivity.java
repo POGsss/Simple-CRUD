@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // Firebase
         FirebaseRecyclerOptions<MainModel> options =
                 new FirebaseRecyclerOptions.Builder<MainModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("data").orderByChild(""), MainModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("data").orderByChild("title"), MainModel.class)
                         .build();
 
         mainAdapter = new MainAdapter(options);
