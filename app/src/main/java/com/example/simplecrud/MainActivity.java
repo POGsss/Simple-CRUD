@@ -1,6 +1,7 @@
 package com.example.simplecrud;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Recycler View
-        outputRv.setLayoutManager(new LinearLayoutManager(this));
+        outputRv.setLayoutManager(new GridLayoutManager(this, 1));
 
         // Firebase
         FirebaseRecyclerOptions<MainModel> options =
@@ -65,13 +66,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Start Main Adapter
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mainAdapter.startListening();
-    }
-
     // Search Bar Function
     public void searchText(String query) {
         FirebaseRecyclerOptions<MainModel> options =
@@ -81,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
 
         mainAdapter = new MainAdapter(options);
         outputRv.setAdapter(mainAdapter);
+        mainAdapter.startListening();
+    }
+
+    // Start Main Adapter
+    @Override
+    protected void onStart() {
+        super.onStart();
         mainAdapter.startListening();
     }
 }
